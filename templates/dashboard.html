@@ -1,0 +1,58 @@
+{% extends "layout.html"%}
+{% block content%}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(  {{url_for('static', filename='img/admin.jpg')}}   )">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Admin Panel</h1>
+            <span class="subheading">you can edit database here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SNO</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Image</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+
+
+    </tr>
+  </thead>
+</table>
+{% for post in karim%}  
+  <table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">{{post.sno}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.content}}</td>
+      <td>{{post.image}}</td>
+      <td> <a class="btn btn-primary float-right" href="#"> Edit</a></td>
+      <td> <a class="btn btn-primary float-right" href="#">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+{% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+ 
